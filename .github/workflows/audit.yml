@@ -1,0 +1,45 @@
+name: Audit patch source
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: windows-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Parse PowerShell and JSON
+        shell: powershell
+        run: |
+          $ErrorActionPreference = 'Stop'
+          Get-Content -Raw -Encoding UTF8 manifest.json | ConvertFrom-Json | Out-Null
+          $translations = Get-Content -Raw -Encoding UTF8 translations.zh-CN.json | ConvertFrom-Json
+          if (@($translations.entries).Count -eq 0) { throw 'Translation table is empty.' }
+          foreach ($script in Get-ChildItem scripts -Filter *.ps1 -File) {
+            $tokens = $null
+            $errors = $null
+            [void][System.Management.Automation.Language.Parser]::ParseFile($script.FullName, [ref]$tokens, [ref]$errors)
+            if ($errors.Count -gt 0) { throw ($errors | Out-String) }
+          }
+      - name: Refuse bundled upstream application files
+        shell: powershell
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $forbidden = @(
+            Get-ChildItem -Recurse -File -Force |
+              Where-Object {
+                $_.Extension -in @('.asar', '.nupkg', '.exe', '.dll', '.node', '.pak', '.map') -or
+                $_.FullName -match '[\\/](backups|originals|resources[\\/]app)[\\/]'
+              }
+          )
+          if ($forbidden.Count -gt 0) {
+            $forbidden.FullName
+            throw 'Forbidden upstream application material is present.'
+          }

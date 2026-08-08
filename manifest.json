@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "patchId": "github-desktop-zh-CN-3.6.3-core-v1",
+  "target": {
+    "product": "GitHub Desktop",
+    "platform": "win32-x64",
+    "version": "3.6.3",
+    "executableSha256": "E0830BBAE5E7FA33E4FECDA80E92C9E461229C09365030BEC5391782455943B8",
+    "packageJsonSha256": "09821BC51AF3FBC2D62169F528F0D0D8FE99F173BFC7FB2FFBB0F988BFABB407",
+    "originalRendererSha256": "1CEA63703B9A65374F2E85B847BF84C387FCF211694ED2661ECFD924CA7C237B",
+    "patchedRendererSha256": "69B3065CD99D0B8401C885EC5AF36BA67C56C0674C8142D8AA737D6A5FE1AA6C",
+    "signerSubject": "CN=\"GitHub, Inc.\", O=\"GitHub, Inc.\", L=San Francisco, S=California, C=US",
+    "signerThumbprint": "2DB2396D6546A1D043BC9BDA8308832CE8D09F63"
+  }
+}

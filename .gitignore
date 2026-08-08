@@ -1,0 +1,23 @@
+# Never commit GitHub Desktop application material or local backups.
+*.asar
+*.nupkg
+*.exe
+*.dll
+*.node
+*.pak
+*.map
+*.bak
+*.tmp
+app-*/
+resources/app/
+backups/
+originals/
+state/
+logs/
+
+# Local editor and OS files.
+.idea/
+.vscode/
+*.user
+Thumbs.db
+.DS_Store
