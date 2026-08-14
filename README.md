@@ -67,6 +67,10 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\Restore.ps1
 
 脚本默认定位 `%LOCALAPPDATA%\GitHubDesktop\app-3.6.3`。高级用户可以显式传入 `-InstallRoot` 与 `-StateRoot`；所有路径仍会经过版本、哈希与重解析点检查。
 
+## 代码依赖与关系图
+
+本补丁不依赖任何第三方 PowerShell 模块或包管理器。运行依赖、入口脚本之间的调用关系，以及安装、恢复和隔离测试的数据流见[依赖与代码关系说明](docs/DEPENDENCIES_AND_ARCHITECTURE.md)。
+
 ## 已验证基线
 
 | 项目 | 值 |
