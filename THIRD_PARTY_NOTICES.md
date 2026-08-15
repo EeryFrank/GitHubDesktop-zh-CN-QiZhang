@@ -6,8 +6,8 @@ GitHub Desktop upstream source:
 
 - Copyright (c) GitHub, Inc.
 - Repository: <https://github.com/desktop/desktop>
-- Target tag/commit: `release-3.6.3` / `931da4a1fae06fdfc3b3a84ea79ec21ba80a2128`
-- Upstream license: <https://github.com/desktop/desktop/blob/release-3.6.3/LICENSE>
+- Target tag/commit: `release-3.6.4` / `28955b81295df6a3232857c15caba933bd7cd03b`
+- Upstream license: <https://github.com/desktop/desktop/blob/release-3.6.4/LICENSE>
 
 GitHub's names, logos, Octocat, and other marks are not licensed by this project's MIT License. See GitHub's terms for open-source applications: <https://docs.github.com/en/site-policy/github-terms/github-open-source-applications-terms-and-conditions>.
 

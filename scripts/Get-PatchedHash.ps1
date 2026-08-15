@@ -3,12 +3,12 @@ param([string]$SourceInstallRoot)
 
 . (Join-Path $PSScriptRoot 'Common.ps1')
 
+$manifest = Get-ProjectManifest
 if ([string]::IsNullOrWhiteSpace($SourceInstallRoot)) {
-    $SourceInstallRoot = Get-DefaultInstallRoot
+    $SourceInstallRoot = Get-DefaultInstallRoot -Manifest $manifest
 }
 
-$manifest = Get-ProjectManifest
-$paths = Get-TargetPaths -InstallRoot $SourceInstallRoot
+$paths = Get-TargetPaths -InstallRoot $SourceInstallRoot -Manifest $manifest
 $sourceHash = Get-Sha256 -LiteralPath $paths.Renderer
 if ($sourceHash -cne [string]$manifest.target.originalRendererSha256) {
     throw "Source renderer.js hash mismatch: $sourceHash"

@@ -29,9 +29,22 @@ function Get-Sha256 {
     }
 }
 
+function Get-TargetVersion {
+    param([Parameter(Mandatory = $true)]$Manifest)
+
+    $targetVersion = [string]$Manifest.target.version
+    if ([string]::IsNullOrWhiteSpace($targetVersion) -or $targetVersion -notmatch '^\d+\.\d+\.\d+$') {
+        throw "Manifest target.version is missing or invalid: $targetVersion"
+    }
+    return $targetVersion
+}
+
 function Get-DefaultInstallRoot {
+    param([Parameter(Mandatory = $true)]$Manifest)
+
     $localAppData = [Environment]::GetFolderPath('LocalApplicationData')
-    return (Join-Path $localAppData 'GitHubDesktop\app-3.6.3')
+    $targetVersion = Get-TargetVersion -Manifest $Manifest
+    return (Join-Path $localAppData "GitHubDesktop\app-$targetVersion")
 }
 
 function Get-DefaultStateRoot {
@@ -55,11 +68,15 @@ function Assert-NoReparsePoint {
 }
 
 function Get-TargetPaths {
-    param([Parameter(Mandatory = $true)][string]$InstallRoot)
+    param(
+        [Parameter(Mandatory = $true)][string]$InstallRoot,
+        [Parameter(Mandatory = $true)]$Manifest
+    )
 
     $root = Get-NormalizedPath -LiteralPath $InstallRoot
-    if ((Split-Path -Leaf $root) -ne 'app-3.6.3') {
-        throw "The install directory name must be app-3.6.3: $root"
+    $expectedLeaf = 'app-' + (Get-TargetVersion -Manifest $Manifest)
+    if ((Split-Path -Leaf $root) -cne $expectedLeaf) {
+        throw "The install directory name must be ${expectedLeaf}: $root"
     }
 
     return [pscustomobject]@{
@@ -76,7 +93,7 @@ function Assert-TargetIdentity {
         [Parameter(Mandatory = $true)]$Manifest
     )
 
-    $paths = Get-TargetPaths -InstallRoot $InstallRoot
+    $paths = Get-TargetPaths -InstallRoot $InstallRoot -Manifest $Manifest
     foreach ($path in @($paths.Root, $paths.Exe, $paths.Package, $paths.Renderer)) {
         if (-not (Test-Path -LiteralPath $path)) {
             throw "Required target does not exist: $path"
@@ -286,12 +303,14 @@ function Invoke-Translations {
 function New-PatchContext {
     param(
         [Parameter(Mandatory = $true)][string]$StateRoot,
-        [Parameter(Mandatory = $true)][string]$Action
+        [Parameter(Mandatory = $true)][string]$Action,
+        [Parameter(Mandatory = $true)]$Manifest
     )
 
     $root = Get-NormalizedPath -LiteralPath $StateRoot
     $logDirectory = Join-Path $root 'logs'
-    $backupDirectory = Join-Path $root 'backups\3.6.3'
+    $backupRoot = Join-Path $root 'backups'
+    $backupDirectory = Join-Path $backupRoot (Get-TargetVersion -Manifest $Manifest)
     [void][System.IO.Directory]::CreateDirectory($logDirectory)
     [void][System.IO.Directory]::CreateDirectory($backupDirectory)
     $stamp = [DateTime]::UtcNow.ToString('yyyyMMddTHHmmssfffZ')

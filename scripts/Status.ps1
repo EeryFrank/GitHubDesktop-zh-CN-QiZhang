@@ -3,12 +3,12 @@ param([string]$InstallRoot)
 
 . (Join-Path $PSScriptRoot 'Common.ps1')
 
+$manifest = Get-ProjectManifest
 if ([string]::IsNullOrWhiteSpace($InstallRoot)) {
-    $InstallRoot = Get-DefaultInstallRoot
+    $InstallRoot = Get-DefaultInstallRoot -Manifest $manifest
 }
 
 try {
-    $manifest = Get-ProjectManifest
     $paths = Assert-TargetIdentity -InstallRoot $InstallRoot -Manifest $manifest
     $hash = Get-Sha256 -LiteralPath $paths.Renderer
     $state = if ($hash -ceq [string]$manifest.target.originalRendererSha256) {

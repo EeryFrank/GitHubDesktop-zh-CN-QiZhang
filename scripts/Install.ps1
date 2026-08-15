@@ -6,16 +6,16 @@ param(
 
 . (Join-Path $PSScriptRoot 'Common.ps1')
 
+$manifest = Get-ProjectManifest
 if ([string]::IsNullOrWhiteSpace($InstallRoot)) {
-    $InstallRoot = Get-DefaultInstallRoot
+    $InstallRoot = Get-DefaultInstallRoot -Manifest $manifest
 }
 if ([string]::IsNullOrWhiteSpace($StateRoot)) {
     $StateRoot = Get-DefaultStateRoot
 }
 
-$context = New-PatchContext -StateRoot $StateRoot -Action 'install'
+$context = New-PatchContext -StateRoot $StateRoot -Action 'install' -Manifest $manifest
 try {
-    $manifest = Get-ProjectManifest
     $translations = Get-TranslationData
     Write-PatchLog -Context $context -Message "Starting patch install: $($manifest.patchId)"
     Write-PatchLog -Context $context -Message "Target: $(Get-NormalizedPath -LiteralPath $InstallRoot)"
