@@ -7,7 +7,7 @@
 | Windows | x64 | 目标操作系统与系统 API |
 | Windows PowerShell | 5.1 或更高 | 执行补丁、恢复、状态和测试脚本 |
 | .NET Framework 系统类库 | 随 Windows PowerShell 提供 | SHA-256、UTF-8、JSON、文件与进程检查 |
-| GitHub Desktop | 官方 3.6.3 x64 | 被校验和修改的上游目标，不包含在本仓库中 |
+| GitHub Desktop | 官方 3.6.4 x64 | 被校验和修改的上游目标，不包含在本仓库中 |
 | GitHub Desktop 内置 Electron/Node | 随目标程序提供 | 仅使用 `GitHubDesktop.exe --check` 验证生成后的 JavaScript 语法 |
 
 本仓库没有 NuGet、npm、PowerShell Gallery 或其他第三方 PowerShell 模块依赖，也不会打包 GitHub Desktop 本体或上游资源。
@@ -17,7 +17,7 @@ flowchart LR
     Windows["Windows x64"] --> PowerShell["Windows PowerShell 5.1+"]
     Framework["Built-in .NET Framework APIs"] --> PowerShell
     PowerShell --> Patch["Chinese patch scripts"]
-    Desktop["Official GitHub Desktop 3.6.3 x64"] --> Target["renderer.js target"]
+    Desktop["Official GitHub Desktop 3.6.4 x64"] --> Target["renderer.js target"]
     Patch --> Target
     DesktopNode["GitHub Desktop embedded Node"] -. "syntax check only" .-> Patch
 ```
@@ -57,7 +57,7 @@ flowchart TD
 
 ```mermaid
 flowchart LR
-    Detect["定位 3.6.3 x64"] --> Verify["版本、签名、路径和原始哈希校验"]
+    Detect["从 manifest 定位 3.6.4 x64"] --> Verify["版本、签名、路径和原始哈希校验"]
     Verify --> StopCheck["确认相关进程已退出"]
     StopCheck --> Backup["创建并复核独立备份"]
     Backup --> Generate["按固定上下文生成中文 renderer.js"]

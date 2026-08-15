@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "locale": "zh-CN",
-  "targetVersion": "3.6.3",
+  "targetVersion": "3.6.4",
   "coveragePolicy": "仅替换已确认的可见界面文案；协议值、事件名、枚举反向映射、日志解析关键字和 Git 输出保持原样。",
   "excludedIdPrefixes": ["menu.", "settings.undoCommit"],
   "excludedReason": "Windows 原生菜单位于 main.js。核心安全版只修改 renderer.js，因此菜单译文保留为术语表但不参与补丁。",
