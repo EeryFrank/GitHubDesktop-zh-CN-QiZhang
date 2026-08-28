@@ -1,3 +1,5 @@
+<!-- SPDX-License-Identifier: LGPL-3.0-or-later -->
+
 # GitHub Desktop 3.6.4 简体中文安全补丁（非官方）
 
 这是一个适用于 **Windows x64 / GitHub Desktop 3.6.4** 的非官方简体中文补丁。项目与 GitHub, Inc. 没有隶属、授权或背书关系。
@@ -73,6 +75,24 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\Restore.ps1
 
 本补丁不依赖任何第三方 PowerShell 模块或包管理器。运行依赖、入口脚本之间的调用关系，以及安装、恢复和隔离测试的数据流见[依赖与代码关系说明](docs/DEPENDENCIES_AND_ARCHITECTURE.md)。
 
+## 开发、验证与源码发布
+
+许可证与文件边界审计：
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\Test-Licensing.ps1
+```
+
+完整补丁隔离测试仍使用前文的 `Test-Patch.ps1`。该测试需要本机已有清单精确支持的官方 GitHub Desktop 3.6.4 x64 安装。
+
+提交完成且工作树干净后，可生成只包含本仓库源码的发布归档：
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\New-SourceArchive.ps1
+```
+
+归档脚本会复查许可证文件、拒绝上游应用文件，并输出源码 ZIP 的 SHA-256。发布检查清单见[源码发布说明](docs/RELEASING.md)。
+
 ## 已验证基线
 
 | 项目 | 值 |
@@ -93,6 +113,11 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\Restore.ps1
 - 自动更新可能创建新版本目录并恢复英文界面；不要把 3.6.4 补丁套用到其他版本。
 - 若当前文件既不是清单中的原版也不是本补丁版本，安装与恢复都会拒绝覆盖。此时应先确认版本或从 GitHub 官方渠道重新安装。
 
-## 开源与商标
+## 许可证、历史授权与商标
 
-本项目自有的补丁器和翻译表按 [MIT License](LICENSE) 开源。GitHub Desktop 上游许可与商标边界见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。本许可证不授予 GitHub 名称、Logo、Octocat 或其他商标权利。
+- 本项目自有的 PowerShell 源码、中文翻译、功能数据、CI 配置和原创文档的当前及后续版本按 [LGPL-3.0-or-later](LICENSE) 授权。
+- `translations.zh-CN.json` 中用于精确匹配的 GitHub Desktop 上游英文原文仍按上游 MIT 许可证处理；本项目不会将这些原文、GitHub 名称或第三方内容重新授权。
+- 仓库当前不含按 CC 授权的原创美术或音频。将来只有落入许可证政策指定目录并满足来源要求的原创素材，才默认按 [CC-BY-SA-4.0](LICENSES/CC-BY-SA-4.0.txt) 授权；Logo、图标和其他品牌素材默认排除。
+- 迁移前已按 MIT 获得的历史版本和副本继续保留当时的授权，本项目不撤回既有 MIT 许可。历史文本保存在 [LICENSES/MIT-legacy-project.txt](LICENSES/MIT-legacy-project.txt)。
+
+精确文件边界见 [LICENSE_POLICY.md](LICENSE_POLICY.md)，GitHub Desktop 上游 MIT 原文、依赖和商标边界见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。本项目不授予 GitHub 名称、Logo、Octocat 或其他商标权利，仅在说明兼容对象时进行必要指称。

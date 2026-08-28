@@ -1,8 +1,10 @@
+<!-- SPDX-License-Identifier: LGPL-3.0-or-later -->
+
 # 安全策略
 
 ## 报告问题
 
-若仓库的 Security 页面提供 **Report a vulnerability**，请优先使用该私密入口。若该入口尚未启用，请只创建一个不含漏洞细节的 Issue，请求维护者提供私密沟通方式。不要在公开 Issue 中上传 GitHub Desktop 原始/修改 bundle、备份文件、凭据、私人仓库信息或包含这些内容的日志。
+若仓库的 Security 页面提供 **Report a vulnerability**，请优先使用该私密入口。若该入口尚未启用，请只创建一个不含漏洞细节的 Issue，说明需要私密沟通方式。不要在公开 Issue 中上传 GitHub Desktop 原始/修改 bundle、备份文件、凭据、私人仓库信息或包含这些内容的日志。
 
 ## 支持边界
 

@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: LGPL-3.0-or-later
+
 name: Audit patch source
 
 on:
@@ -69,3 +71,11 @@ jobs:
             $forbidden.FullName
             throw 'Forbidden upstream application material is present.'
           }
+
+      - name: Audit license boundaries
+        shell: powershell
+        run: powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\Test-Licensing.ps1
+
+      - name: Build and inspect source archive
+        shell: powershell
+        run: powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\New-SourceArchive.ps1 -OutputDirectory "$env:RUNNER_TEMP\source-archive"
