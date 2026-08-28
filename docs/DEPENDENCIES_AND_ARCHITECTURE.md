@@ -1,3 +1,5 @@
+<!-- SPDX-License-Identifier: LGPL-3.0-or-later -->
+
 # 依赖与代码关系
 
 ## 外部依赖

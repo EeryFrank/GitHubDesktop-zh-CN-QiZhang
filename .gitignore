@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: LGPL-3.0-or-later
+
 # Never commit GitHub Desktop application material or local backups.
 *.asar
 *.nupkg
@@ -14,6 +16,7 @@ backups/
 originals/
 state/
 logs/
+dist/
 
 # Local editor and OS files.
 .idea/

@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: LGPL-3.0-or-later
+
 Set-StrictMode -Version 2.0
 $ErrorActionPreference = 'Stop'
 
