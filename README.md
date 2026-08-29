@@ -1,4 +1,4 @@
-<!-- SPDX-License-Identifier: LGPL-3.0-or-later -->
+<!-- SPDX-License-Identifier: GPL-3.0-only -->
 
 # GitHub Desktop 3.6.4 简体中文安全补丁（非官方）
 
@@ -115,9 +115,10 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\New-SourceArch
 
 ## 许可证、历史授权与商标
 
-- 本项目自有的 PowerShell 源码、中文翻译、功能数据、CI 配置和原创文档的当前及后续版本按 [LGPL-3.0-or-later](LICENSE) 授权。
+- 本项目有权授权的 PowerShell 源码、中文翻译、功能数据、CI 配置和原创文档的当前及未来修改按 [GPL-3.0-only](LICENSE) 授权。
 - `translations.zh-CN.json` 中用于精确匹配的 GitHub Desktop 上游英文原文仍按上游 MIT 许可证处理；本项目不会将这些原文、GitHub 名称或第三方内容重新授权。
-- 仓库当前不含按 CC 授权的原创美术或音频。将来只有落入许可证政策指定目录并满足来源要求的原创素材，才默认按 [CC-BY-SA-4.0](LICENSES/CC-BY-SA-4.0.txt) 授权；Logo、图标和其他品牌素材默认排除。
+- 仓库当前没有项目自有美术、音频或品牌媒体资产。未来新增且由项目完整持有权利的美术、音频、Logo、图标或其他品牌素材，只有经逐项清单明确指定后才适用 [LicenseRef-EeryFrank-Assets-Permission-Required](LICENSES/LicenseRef-EeryFrank-Assets-Permission-Required.txt)：未经修改的素材仅可随未经修改的官方发布包分发；单独提取、复用、修改、再分发、商业或品牌使用均须事先取得书面许可。
 - 迁移前已按 MIT 获得的历史版本和副本继续保留当时的授权，本项目不撤回既有 MIT 许可。历史文本保存在 [LICENSES/MIT-legacy-project.txt](LICENSES/MIT-legacy-project.txt)。
+- 截至提交 `c4069d88b2fdce86d5b825a48b739aa5067c4ff2`（含）已按 `LGPL-3.0-or-later` 获得的版本和副本继续保留当时的授权；历史文本保存在 [LICENSES/LGPL-3.0-or-later.txt](LICENSES/LGPL-3.0-or-later.txt)。
 
-精确文件边界见 [LICENSE_POLICY.md](LICENSE_POLICY.md)，GitHub Desktop 上游 MIT 原文、依赖和商标边界见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。本项目不授予 GitHub 名称、Logo、Octocat 或其他商标权利，仅在说明兼容对象时进行必要指称。
+精确文件边界见 [LICENSE_POLICY.md](LICENSE_POLICY.md)，素材现状与未来逐项登记规则见 [ASSET_LICENSES.md](ASSET_LICENSES.md)，GitHub Desktop 上游 MIT 原文、依赖和商标边界见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。本项目不授予 GitHub 名称、Logo、Octocat 或其他商标权利，仅在说明兼容对象时进行必要指称。

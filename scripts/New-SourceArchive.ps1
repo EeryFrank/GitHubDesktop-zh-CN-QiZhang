@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: LGPL-3.0-or-later
+# SPDX-License-Identifier: GPL-3.0-only
 
 [CmdletBinding()]
 param([string]$OutputDirectory)
@@ -54,9 +54,12 @@ try {
         $required = @(
             'LICENSE',
             'LICENSE_POLICY.md',
+            'ASSET_LICENSES.md',
             'THIRD_PARTY_NOTICES.md',
             'CONTRIBUTING.md',
             'LICENSES/CC-BY-SA-4.0.txt',
+            'LICENSES/LGPL-3.0-or-later.txt',
+            'LICENSES/LicenseRef-EeryFrank-Assets-Permission-Required.txt',
             'LICENSES/MIT-GitHub-Desktop.txt',
             'LICENSES/MIT-legacy-project.txt'
         )

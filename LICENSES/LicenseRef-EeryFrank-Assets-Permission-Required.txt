@@ -1,0 +1,73 @@
+LicenseRef-EeryFrank-Assets-Permission-Required
+Version 1.0, 29 August 2026
+
+Copyright (c) EeryFrank / QiZhang. All rights reserved except for the limited permission below.
+
+1. Scope
+
+This license applies only to a visual, audio, branding, or other creative asset that is explicitly identified as covered by "LicenseRef-EeryFrank-Assets-Permission-Required" in ASSET_LICENSES.md, adjacent metadata, or a file-level notice. A repository path or this license file alone does not place an asset under these terms.
+
+2. Limited package permission
+
+You may use and redistribute an unmodified covered asset only while it remains embedded in, and is distributed solely as part of, an unmodified official release package published by EeryFrank or the applicable official project.
+
+3. Prior written permission required
+
+Prior written permission from EeryFrank is required for every use outside section 2, including:
+
+- extracting or distributing the asset separately;
+- reusing the asset in another project, package, modpack, product, service, or publication;
+- copying, adapting, translating, editing, transforming, or creating derivative works from the asset;
+- redistributing the asset in a modified, repackaged, partial, or unofficial release;
+- commercial use, merchandising, advertising, promotion, sponsorship, or monetized distribution;
+- using the asset as a logo, icon, trade dress, brand identity, or in a way that suggests endorsement or affiliation.
+
+4. No automatic coverage and no relicensing of existing material
+
+New assets require a provenance and rights review plus an explicit inventory entry before these terms apply. Third-party material keeps its original terms. Assets already released under MIT, CC BY-SA, or another license keep those existing grants; this license does not revoke, narrow, or replace them.
+
+5. No trademark or endorsement rights
+
+No trademark, service-mark, project-name, logo, endorsement, or affiliation rights are granted except the narrow copyright permission in section 2.
+
+6. No warranty
+
+Covered assets are provided "as is", without warranty of any kind, express or implied, to the maximum extent permitted by law.
+
+---
+
+LicenseRef-EeryFrank-Assets-Permission-Required
+版本 1.0，2026 年 8 月 29 日
+
+版权所有 (c) EeryFrank / QiZhang。除下述有限许可外，保留所有权利。
+
+1. 适用范围
+
+本许可仅适用于在 ASSET_LICENSES.md、相邻元数据或文件级声明中被明确标记为“LicenseRef-EeryFrank-Assets-Permission-Required”的视觉、音频、品牌或其他创意资产。仅因文件位于某个目录，或仓库中存在本许可正文，并不会自动使该资产适用本许可。
+
+2. 官方完整包有限许可
+
+仅当受许可资产保持未修改，并且始终嵌入在由 EeryFrank 或相应官方项目发布的、未经修改的官方发布包中时，才允许随该完整官方包使用和分发该资产。
+
+3. 必须事先取得书面授权
+
+任何超出第 2 条的使用均必须事先取得 EeryFrank 的书面授权，包括但不限于：
+
+- 单独提取或分发资产；
+- 在其他项目、整合包、产品、服务或出版物中复用资产；
+- 复制、改编、翻译、编辑、转换资产或制作衍生作品；
+- 在修改版、重打包版、不完整包或非官方发布中再分发资产；
+- 商业使用、商品化、广告、推广、赞助或货币化分发；
+- 将资产用作 Logo、图标、商业外观、品牌身份，或用于暗示背书或关联。
+
+4. 不自动适用，也不追溯改变既有许可
+
+新资产必须先完成来源与权利核验，并在资产清单中明确登记后，方可适用本许可。第三方材料保留其原始条款。已经按 MIT、CC BY-SA 或其他许可证发布的资产继续保留既有授权；本许可不会撤回、缩减或替换这些授权。
+
+5. 不授予商标或背书权
+
+除第 2 条的狭窄著作权许可外，不授予任何商标、服务标志、项目名称、Logo、背书或关联权利。
+
+6. 不提供担保
+
+在法律允许的最大范围内，受许可资产均按“现状”提供，不作任何明示或默示担保。

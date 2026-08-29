@@ -1,4 +1,4 @@
-<!-- SPDX-License-Identifier: LGPL-3.0-or-later -->
+<!-- SPDX-License-Identifier: GPL-3.0-only -->
 <!-- Trademark-Policy: no-trademark-rights-granted -->
 
 # 第三方告知
@@ -14,7 +14,7 @@
 - 该目标版本的上游 MIT 原文：[LICENSES/MIT-GitHub-Desktop.txt](LICENSES/MIT-GitHub-Desktop.txt)
 - 上游原文页面：<https://github.com/desktop/desktop/blob/release-3.6.4/LICENSE>
 
-`translations.zh-CN.json` 的 `original` 字段包含用于精确匹配受支持版本的 GitHub Desktop 英文界面原文。这些上游字符串、GitHub 产品名称及其他上游标识保留其上游 MIT 许可证和权利边界；本项目的 LGPL 许可证只覆盖有权授权的项目原创结构、逻辑、中文译文和功能数据。
+`translations.zh-CN.json` 的 `original` 字段包含用于精确匹配受支持版本的 GitHub Desktop 英文界面原文。这些上游字符串、GitHub 产品名称及其他上游标识保留其上游 MIT 许可证和权利边界；本项目的 `GPL-3.0-only` 许可证只覆盖有权授权的项目原创结构、逻辑、中文译文和功能数据。
 
 ## CI 与运行环境
 
@@ -27,8 +27,10 @@
 
 ## 商标边界
 
-“GitHub”和“GitHub Desktop”仅用于准确说明兼容对象。本项目与 GitHub, Inc. 没有隶属、授权或背书关系。项目的 LGPL、未来素材 CC 和历史 MIT 许可证均不授予 GitHub 名称、Logo、Octocat 或其他商标权利。相关规则见 GitHub 的开源应用条款：<https://docs.github.com/en/site-policy/github-terms/github-open-source-applications-terms-and-conditions>。
+“GitHub”和“GitHub Desktop”仅用于准确说明兼容对象。本项目与 GitHub, Inc. 没有隶属、授权或背书关系。项目的 GPL、未来素材 LicenseRef、历史 MIT/LGPL/CC 文本均不授予 GitHub 名称、Logo、Octocat 或其他商标权利。相关规则见 GitHub 的开源应用条款：<https://docs.github.com/en/site-policy/github-terms/github-open-source-applications-terms-and-conditions>。
 
 ## 历史项目许可证
 
-迁移前的项目版本曾按 MIT 许可证发布。该既有授权不撤回；其原始文本保存在 [LICENSES/MIT-legacy-project.txt](LICENSES/MIT-legacy-project.txt)。它是项目历史记录，不是 GitHub Desktop 上游许可证的替代品。
+迁移前的项目版本曾按 MIT 许可证发布。该既有授权不撤回；其原始文本保存在 [LICENSES/MIT-legacy-project.txt](LICENSES/MIT-legacy-project.txt)。截至提交 `c4069d88b2fdce86d5b825a48b739aa5067c4ff2`（含）已按 `LGPL-3.0-or-later` 发布的项目版本和副本同样保留既有授权；原文保存在 [LICENSES/LGPL-3.0-or-later.txt](LICENSES/LGPL-3.0-or-later.txt)。这些文件是项目历史记录，不是 GitHub Desktop 上游许可证的替代品，也不把本次更新后的新增内容自动置于历史许可证下。
+
+仓库当前没有项目自有美术、音频或品牌媒体资产。未来逐项确认的自有素材使用 `LicenseRef-EeryFrank-Assets-Permission-Required`；该项目政策不会修改任何第三方、MIT、旧 CC、Apache 或 C2PA 条款。
